@@ -22,11 +22,14 @@ int main(){
     }
 
     for(int i = 1;i <= max_count;i++){
-        printf("%2d: ", i);
-        for(int j = 1;j <= length[i];j++){
-            printf("*");
+        if(length[i] == 0) continue;
+        else {
+            printf("%2d: ", i);
+            for(int j = 1;j <= length[i];j++){
+                printf("*");
+            }
+            printf("\n");
         }
-        printf("\n");
     }
 
     return 0;
@@ -36,7 +39,7 @@ int main(){
 One thing i added was to only limit the count to the maximum number of char,
 i.e. any char lets say there are 1,2,3,4 cahr words.
 if there is no 3 char words but the max char word is 4,
-then 3 will be shown as 0/nothing, and if 4 is max char word in the input/file,
+then 3 will not even be shown, and if 4 is max char word in the input/file,
 so after that if all are 0, means no words with 5,6,7..chars,
 then last shows will only be till 4 char words.
 
